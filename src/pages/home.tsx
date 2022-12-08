@@ -28,6 +28,15 @@ import HelpIcon from '@mui/icons-material/Help'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import SearchIcon from '@mui/icons-material/Search'
 
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+	width: '100%',
+	display: 'flex',
+	flexDirection: 'column',
+	'@media all': {
+		minHeight: 375,
+	},
+}))
+
 export default function HomePage() {
 	return (
 		<>
@@ -42,25 +51,23 @@ export default function HomePage() {
 
 			<CssBaseline />
 			<AppBar position='fixed' sx={{ top: 0 }}>
-				<Toolbar sx={{ width: '100%' }}>
-					<Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ width: '100%' }}>
-						<IconButton color='inherit'>
-							<HelpIcon />
-						</IconButton>
-						<Typography>Inicio</Typography>
-						<IconButton color='inherit'>
-							<Badge
-								color='error'
-								overlap='circular'
-								badgeContent=' '
-								variant='dot'
-								anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-							>
-								<NotificationsIcon />
-							</Badge>
-						</IconButton>
-					</Stack>
-				</Toolbar>
+				<Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ width: '100%' }}>
+					<IconButton color='inherit'>
+						<HelpIcon />
+					</IconButton>
+					<Typography>Inicio</Typography>
+					<IconButton color='inherit'>
+						<Badge
+							color='error'
+							overlap='circular'
+							badgeContent=' '
+							variant='dot'
+							anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+						>
+							<NotificationsIcon />
+						</Badge>
+					</IconButton>
+				</Stack>
 				<Stack sx={{ p: 2, pt: 0 }} spacing={1}>
 					<Typography variant='body2'>Encuentra tu vuelo</Typography>
 					<TextField
@@ -100,6 +107,10 @@ export default function HomePage() {
 					</Box>
 				</Stack>
 			</AppBar>
+			<StyledToolbar></StyledToolbar>
+			<Box sx={{ height: 1200, overflow: 'auto' }}>
+				<Typography>Example title</Typography>
+			</Box>
 			{/* <Paper square sx={{ pb: '50px' }}>
 				<Typography variant='h5' gutterBottom component='div' sx={{ p: 2, pb: 0 }}>
 					Inbox

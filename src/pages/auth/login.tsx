@@ -155,7 +155,7 @@ export default function LoginPage() {
 								'&:hover': { textDecoration: 'underline' },
 							}}
 							component={RouterLink}
-							href='/register'
+							href='/auth/register'
 						>
 							No tienes cuenta?, Registrate aqui!
 						</Link>

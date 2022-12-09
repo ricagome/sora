@@ -7,7 +7,7 @@ export default function IndexPage() {
 	const { push } = useRouter()
 
 	const handleContinue = () => {
-		push('/login')
+		push('/auth/login')
 	}
 
 	return (

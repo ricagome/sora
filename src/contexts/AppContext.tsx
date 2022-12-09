@@ -3,7 +3,7 @@ import { RFC } from '../types'
 
 interface AppContextType {}
 
-const AppContext = React.createContext<AppContextType>({} as AppContextType)
+export const AppContext = React.createContext<AppContextType>({} as AppContextType)
 
 export default function AppProvider(props: RFC) {
 	const value: AppContextType = {}

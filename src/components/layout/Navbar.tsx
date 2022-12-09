@@ -1,7 +1,7 @@
 import { Badge, IconButton, Stack, Typography } from '@mui/material'
 import HelpIcon from '@mui/icons-material/Help'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import React from 'react'
+import * as React from 'react'
 import { useRouter } from 'next/router'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 
@@ -13,7 +13,7 @@ export default function Navbar() {
   }
 
   return (
-    <Stack direction='row' alignItems='center' justifyContent='space-around' sx={{ width: '100%' }}>
+    <Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ width: '100%' }}>
       {pathname.includes('flights')
         ? (
           <IconButton color='inherit' onClick={() => back()}>

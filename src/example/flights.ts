@@ -1,4 +1,6 @@
-export const flights = [{
+import { Flight } from "../types/flight";
+
+export const flights: Flight[] = [{
   "id": "b4a21233-c320-4504-aad5-843ceb53e9c0",
   "hour": "2022-11-22 18:43:41",
   "destiny": "Picton",
@@ -157,7 +159,7 @@ export const flights = [{
   "hour": "2022-08-03 02:17:00",
   "destiny": "Göteborg",
   "airport": "Solano Airport",
-  "flightCode": null,
+  "flightCode": "JPBX",
   "status": "canceled"
 }, {
   "id": "8a551092-21c0-460a-9b0b-d4d4199f8958",

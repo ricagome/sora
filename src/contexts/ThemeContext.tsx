@@ -3,7 +3,7 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/st
 import { RFC } from '../types'
 import { CssBaseline } from '@mui/material'
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
+const ColorModeContext = React.createContext({ toggleColorMode: () => { } })
 
 export default function ThemeProvider(props: RFC) {
 	const [mode, setMode] = React.useState<'light' | 'dark'>('light')
@@ -21,6 +21,9 @@ export default function ThemeProvider(props: RFC) {
 			createTheme({
 				palette: {
 					mode,
+					primary: {
+						main: '#C2CFF0'
+					},
 					warning: {
 						main: '#FF9F0A',
 					},

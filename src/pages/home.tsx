@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Divider, Grid, InputAdornment, ListItemButton, ListItemIcon, Stack, TextField } from '@mui/material'
+import { Button, Container, Divider, Grid, InputAdornment, ListItemButton, ListItemIcon, Stack, TextField } from '@mui/material'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Box from '@mui/material/Box'
@@ -16,6 +16,8 @@ import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import HomeLayout from '../components/layout/HomeLayout'
+import WeatherNav from '../components/layout/WeatherNav'
+import AirportSearch from '../components/layout/AirportSearch'
 
 const listItems = [
 	{
@@ -74,58 +76,22 @@ export default function HomePage() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<HomeLayout showPlane>
-				<Grid container sx={{ overflow: 'auto', bgcolor: theme => theme.palette.primary.light, px: 2, py: 1 }}>
-					<Grid item xs={5} color='white'>
-						<Typography variant='h6' fontSize={12} fontWeight={600}>Clima</Typography>
-						<Typography variant='subtitle1' fontSize={12} >Bucaramanga</Typography>
-					</Grid>
-					<Grid item xs={3} sx={{ display: 'flex', gap: 1 }} justifyContent='center' alignItems='center' color='orange'>
-						<CloudIcon />
-						<Typography>9 C</Typography>
-					</Grid>
-					<Grid item xs={4} color='white'>
-						<Typography align='right' variant='h6' fontSize={12} fontWeight={600}>Estado</Typography>
-						<Typography align='right' variant='subtitle1' fontSize={12} >Abierto</Typography>
-					</Grid>
-				</Grid>
-				<Stack direction='row' justifyContent='space-around' sx={{ px: 2, py: 1, }} spacing={2}>
-					<TextField
-						variant='outlined'
-						name='search'
-						placeholder='Buscar en el aeropuerto'
-						size='small'
-						sx={{
-							'& .MuiInputBase-root': {
-								overflow: 'hidden',
-								borderRadius: 1,
-								backgroundColor: theme => (theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b'),
-							},
-						}}
-						InputProps={{
-							endAdornment: (
-								<InputAdornment position='end'>
-									<SearchIcon />
-								</InputAdornment>
-							),
-						}}
-					/>
-					<Button variant='contained' sx={{ bgcolor: theme => theme.palette.grey[500] }}>
-						<LayersIcon />
-					</Button>
-
-				</Stack>
+				<WeatherNav />
+				<AirportSearch />
 				<Divider />
 				<Box sx={{ pb: '67px' }}>
 					<List>
 						{listItems.map((item, i) => (
 							<>
 								<ListItem disablePadding>
-									<ListItemButton onClick={() => handleNavigate(item.href)}>
-										<ListItemIcon>
-											{item.icon}
-										</ListItemIcon>
-										<ListItemText primary={item.label} />
-									</ListItemButton>
+									<Container maxWidth='sm'>
+										<ListItemButton onClick={() => handleNavigate(item.href)}>
+											<ListItemIcon>
+												{item.icon}
+											</ListItemIcon>
+											<ListItemText primary={item.label} />
+										</ListItemButton>
+									</Container>
 								</ListItem>
 								{i < listItems.length - 1 && <Divider />}
 							</>

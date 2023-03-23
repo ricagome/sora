@@ -67,7 +67,7 @@ export default function HomeLayout(props: Props) {
           </Stack>
           {!!showPlane && (
             <Stack alignItems='center' sx={{ pb: 0.5 }}>
-              <Box sx={{ position: 'relative', width: 360, height: 85 }}>
+              <Box sx0={{ position: 'relative', width: 360, height: 85 }}>
                 <Image
                   src='/assets/plane.png'
                   fill

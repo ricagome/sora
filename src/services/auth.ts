@@ -6,6 +6,7 @@ import {
 	signInWithPopup,
 	signOut as signOutFromFb,
 } from 'firebase/auth'
+import { SetStateAction } from 'react'
 import { auth } from '../libs/firebase'
 import { Auth, SignInDto, SignUpDto, SignUpDtoFromForm } from '../types'
 import { createUser } from './users'
@@ -45,7 +46,7 @@ export const sessionObserver = (
 	setAuth: React.Dispatch<React.SetStateAction<Auth | null>>,
 	setLoading?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-	return onAuthStateChanged(auth, user => {
+	return onAuthStateChanged(auth, (user: SetStateAction<Auth | null>) => {
 		console.log('Refresh session in realtime 👤')
 		if (user) {
 			console.log('User exists')
